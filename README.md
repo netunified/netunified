@@ -1,7 +1,15 @@
- ```bash
- function whoami() {
-   printf "%s\n" "${@}" || return $?;
- }
+# about me
 
- whoami "developer, gamer, hobbyist, etc";
- ```
+```console
+netunified@dev:/home/netunified$ cat aboutme.txt
+Developer
+Bookworm
+Hobbyist
+Gamer
+```
+
+## [leetcode](./leetcode.md)
+
+```console
+netunified@dev:/home/netunified$ cd leetcode
+```
