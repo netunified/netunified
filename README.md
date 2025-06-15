@@ -8,7 +8,7 @@ Hobbyist
 Gamer
 ```
 
-## [leetcode](./leetcode.md)
+## [leetcode](./leetcode/leetcode.md)
 
 ```console
 netunified@dev:/home/netunified$ cd leetcode
