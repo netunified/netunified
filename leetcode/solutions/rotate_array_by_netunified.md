@@ -37,42 +37,49 @@ All elements are visited exactly once, and swapped correctly — with just a few
 ```c
 #include <stdio.h>
 
+// Solution by netunified (LeetCode)
+
 int rotate(int* nums, int numsSize, int k) {
-    int prev = 0, curr = 0, ptr_offset = 0, ptr = 0;
+ int prev = 0, curr = 0, ptr_offset = 0, ptr = 0; 
 
-    for (int i = 0; i < numsSize; i++) {
+  for (int i = 0; i < numsSize; i++) {
 
-        /* if ptr arrives at the offset (loop detected)
-         * increment the offset by 1 and move the ptr
-         * k steps to the right. else continue swapping
-         * as usual.
-         */
-        if (ptr_offset == ptr) {
-            ptr_offset = (ptr + 1) % numsSize;
-            ptr = (ptr_offset + k) % numsSize;
-            curr = nums[ptr_offset];
-            prev = nums[ptr];
-            nums[ptr] = curr;
-        } else {
-            ptr = (ptr + k) % numsSize;
-            curr = nums[ptr];
-            nums[ptr] = prev;
-            prev = curr;
-        }
+    /* if ptr arrives at the offset (loop detected) 
+     * increment the offset by 1 and move the ptr 
+     * k steps to the right. else continue swapping
+     * as usual.
+     */ 
+    if (ptr_offset == ptr) {
+        ptr_offset = (ptr + 1) % numsSize;
+        ptr = (ptr_offset + k) % numsSize;
+        curr = nums[ptr_offset];
+        prev = nums[ptr];
+        nums[ptr] = curr;
+    } else {
+        ptr = (ptr + k) % numsSize;
+        curr = nums[ptr];
+        nums[ptr] = prev;
+        prev = curr;
     }
+  }
 
-    return 0;
+  return 0;
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6};
-    int k = 2;
-    rotate(arr, sizeof(arr) / sizeof(arr[0]), k);
+  int k = 2;
+  int arr[] = {1, 2, 3, 4, 5, 6};
+  int arr_len = sizeof(arr) / sizeof(arr[0]);
+  int ret = rotate(arr, arr_len, k);
 
-    for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
-        printf((i == 0) ? "[%d," : (i < 5) ? "%d," : "%d]\n", arr[i]);
 
-    return 0;
+  for (int i = 0; i < arr_len; i++)
+    printf(
+        (i == 0) ? "[%d," : (i < arr_len - 1) ? "%d," : "%d]\n",
+        arr[i]
+    );
+
+  return ret;
 }
 ```
 
