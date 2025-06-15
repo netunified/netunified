@@ -101,13 +101,13 @@ This smart handling **implicitly tracks multiple disjoint cycles** that arise wh
 For `nums = [1, 2, 3, 4, 5, 6]`, `k = 2`, this is the rotation sequence:
 
 ```
-Original:  [1, 2, 3, 4, 5, 6]
-Step 1 →   [1, 2, 1, 4, 5, 6]
-Step 2 →   [1, 2, 1, 4, 3, 6]
-Step 3 →   [5, 2, 1, 4, 3, 6]
-Step 4 →   [5, 2, 1, 2, 3, 6]
-Step 5 →   [5, 6, 1, 2, 3, 6]
-Step 6 →   [5, 6, 1, 2, 3, 4]
+Original: [1, 2, 3, 4, 5, 6]
+Step 1 →  [1, 2, 3, 2, 5, 6]
+Step 2 →  [1, 2, 3, 2, 5, 4]
+Step 3 →  [1, 6, 3, 2, 5, 4]
+Step 4 →  [1, 6, 3, 2, 3, 4]
+Step 5 →  [5, 6, 3, 2, 3, 4]
+Step 6 →  [5, 6, 1, 2, 3, 4]
 ```
 
 Final output: `[5, 6, 1, 2, 3, 4]`
